@@ -6,6 +6,51 @@
 /************************************************************/
 /* LAYOUT */
 
+.bg-primary {
+    background-color: var(--color-primary);
+}
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+.bg-light {
+    background-color: var(--color-light);
+}
+
+h2 {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 50px;
+    font-size: 60px;
+    line-height: 60px;
+    text-transform: capitalize;
+    position: relative;
+}
+    h2::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        position: absolute;
+        bottom: -23px;
+        left: 0;
+    }
+    h2::after {
+        content: '';
+        display: inline-block;
+        width: 80px;
+        height: 2px;
+        background-color: var(--color-secondary);
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+    }
+    h2.no-style::before,
+    h2.no-style::after {
+        display: none;
+    }
+
 /************************************************************/
 
 /************************************************************/
