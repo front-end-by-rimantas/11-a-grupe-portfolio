@@ -9,6 +9,7 @@
 // about me
 
 // numbers
+renderBlocks( numbers );
 
 // skills
 
