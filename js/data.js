@@ -39,6 +39,28 @@ const numbers = [
 // job history
 
 // services
+const services = [
+    {
+        icon: 'archive',
+        title: 'Web Design',
+        description: 'If you’re looking blank casvsettes on the web, you may confuse.'
+    },
+    {
+        icon: 'trophy',
+        title: 'App Development',
+        description: 'If you’re looking blank casvsettes on the web, you may confuse.'
+    },
+    {
+        icon: 'users',
+        title: 'Web Development',
+        description: 'If you’re looking blank casvsettes on the web, you may confuse.'
+    },
+    {
+        icon: 'smile-o',
+        title: 'Web Development',
+        description: 'If you’re looking blank casvsettes on the web, you may confuse.'
+    }
+];
 
 // testimonials
 
