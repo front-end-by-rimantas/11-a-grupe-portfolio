@@ -9,7 +9,7 @@
 // about me
 
 // numbers
-renderBlocks( numbers );
+renderBlocks( 'achievements', numbers );
 
 // skills
 
@@ -18,6 +18,7 @@ renderBlocks( numbers );
 // job history
 
 // services
+renderBlocks( 'services', services );
 
 // testimonials
 
