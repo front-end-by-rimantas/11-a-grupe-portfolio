@@ -19,6 +19,7 @@
         border: 2px solid var(--color-primary);
         background-color: var(--color-primary-50);
         border-radius: 50%;
+        animation: round infinite 3s linear;
     }
     .block > .number {
         display: inline-block;
@@ -51,5 +52,23 @@
     }
     .block + .block {
         margin-left: 0;
+    }
+}
+
+@keyframes round {
+    0% {
+        border-radius: 120px 135px 110px 90px;
+    }
+    25% {
+        border-radius: 130px 140px 100px 110px;
+    }
+    50% {
+        border-radius: 110px 97px 150px 100px;
+    }
+    75% {
+        border-radius: 80px 107px 120px 90px;
+    }
+    100% {
+        border-radius: 120px 135px 110px 90px;
     }
 }
