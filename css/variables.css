@@ -1,0 +1,16 @@
+:root {
+    --p-r: 144;
+    --p-g: 172;
+    --p-b: 208;
+    --color-primary: rgb(var(--p-r), var(--p-g), var(--p-b));
+    --color-primary-50: rgb(var(--p-r), var(--p-g), var(--p-b), 0.4);
+    --color-primary-anti: #fff;
+
+    --color-secondary: #E45447;
+    --color-secondary-anti: #fff;
+    
+    --color-light: #F9F9FF;
+    --color-light-anti: #333;
+
+    --color-star: #FFC000;
+}

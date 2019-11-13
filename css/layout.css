@@ -1,0 +1,36 @@
+.container {
+    display: inline-block;
+    width: 100%;
+    padding: 80px 0;
+}
+    .container > .row {
+        display: inline-block;
+        width: 1200px;
+        margin: 0 calc(50% - 600px);
+    }
+
+@media (max-width: 1300px) {
+    .container > .row {
+        width: 1000px;
+        margin: 0 calc(50% - 500px);
+    }
+}
+@media (max-width: 1100px) {
+    .container > .row {
+        width: 800px;
+        margin: 0 calc(50% - 400px);
+    }
+}
+@media (max-width: 900px) {
+    .container > .row {
+        width: 600px;
+        margin: 0 calc(50% - 300px);
+    }
+}
+@media (max-width: 700px) {
+    .container > .row {
+        width: 100%;
+        margin: 0;
+        padding: 80px 20px;
+    }
+}
