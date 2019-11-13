@@ -9,6 +9,11 @@
 // about me
 
 // numbers
+function renderBlocks( list ) {
+    console.log(list);
+    
+    return;
+}
 
 // skills
 
