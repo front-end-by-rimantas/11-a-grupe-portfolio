@@ -1,3 +1,19 @@
+:root {
+    --gap: 20px;        /* margin: 0 var(--gap) */
+    --col-1: calc((100% - 12 * 2 * var(--gap)) / 12);
+    --col-2: calc(var(--col-1) * 2   + 1 * 2 * var(--gap));
+    --col-3: calc(var(--col-1) * 3   + 2 * 2 * var(--gap));
+    --col-4: calc(var(--col-1) * 4   + 3 * 2 * var(--gap));
+    --col-5: calc(var(--col-1) * 5   + 4 * 2 * var(--gap));
+    --col-6: calc(var(--col-1) * 6   + 5 * 2 * var(--gap));
+    --col-7: calc(var(--col-1) * 7   + 6 * 2 * var(--gap));
+    --col-8: calc(var(--col-1) * 8   + 7 * 2 * var(--gap));
+    --col-9: calc(var(--col-1) * 9   + 8 * 2 * var(--gap));
+    --col-10: calc(var(--col-1) * 10 + 9 * 2 * var(--gap));
+    --col-11: calc(var(--col-1) * 11 + 10 * 2 * var(--gap));
+    --col-12: calc(var(--col-1) * 12 + 11 * 2 * var(--gap));
+}
+
 .container {
     display: inline-block;
     width: 100%;
@@ -5,9 +21,38 @@
 }
     .container > .row {
         display: inline-block;
-        width: 1200px;
-        margin: 0 calc(50% - 600px);
+        width: calc(1200px + 2 * var(--gap));
+        margin: 0 calc(50% - 600px - var(--gap));
     }
+        .row > .col-1,
+        .row > .col-2,
+        .row > .col-3,
+        .row > .col-4,
+        .row > .col-5,
+        .row > .col-6,
+        .row > .col-7,
+        .row > .col-8,
+        .row > .col-9,
+        .row > .col-10,
+        .row > .col-11,
+        .row > .col-12 {
+            display: inline-block;
+            float: left;
+            min-height: 1px;
+            margin: 0 var(--gap);
+        }
+        .row > .col-1 {width: var(--col-1);}
+        .row > .col-2 {width: var(--col-2);}
+        .row > .col-3 {width: var(--col-3);}
+        .row > .col-4 {width: var(--col-4);}
+        .row > .col-5 {width: var(--col-5);}
+        .row > .col-6 {width: var(--col-6);}
+        .row > .col-7 {width: var(--col-7);}
+        .row > .col-8 {width: var(--col-8);}
+        .row > .col-9 {width: var(--col-9);}
+        .row > .col-10 {width: var(--col-10);}
+        .row > .col-11 {width: var(--col-11);}
+        .row > .col-12 {width: var(--col-12);}
 
 @media (max-width: 1300px) {
     .container > .row {

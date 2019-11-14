@@ -12,6 +12,7 @@
 renderBlocks( 'achievements', numbers );
 
 // skills
+renderSkills( skills );
 
 // latest work
 
