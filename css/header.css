@@ -12,6 +12,7 @@
         font-size: 28px;
         line-height: 50px;
         text-align: center;
+        cursor: pointer;
     }
     #main_header nav {
         display: inline-block;
