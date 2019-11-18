@@ -1,0 +1,42 @@
+#main_header {
+    padding: 10px 0;
+}
+    #main_header .logo {
+        display: inline-block;
+        float: left;
+    }
+    #main_header i {
+        display: none;
+        width: 50px;
+        float: right;
+        font-size: 28px;
+        line-height: 50px;
+        text-align: center;
+    }
+    #main_header nav {
+        display: inline-block;
+        float: right;
+    }
+        #main_header nav > a {
+            display: inline-block;
+            float: left;
+            padding: 0 10px 2px;
+            font-size: 22px;
+            line-height: 48px;
+            text-decoration: none;
+            color: #333;
+        }
+            #main_header nav > a:hover,
+            #main_header nav > a.active {
+                padding-bottom: 0;
+                border-bottom: 2px solid var(--color-secondary);
+            }
+
+@media (max-width: 900px) {
+    #main_header i {
+        display: inline-block;
+    }
+    #main_header nav {
+        display: none;
+    }
+}
