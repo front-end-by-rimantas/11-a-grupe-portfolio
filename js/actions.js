@@ -15,6 +15,9 @@ close.addEventListener('click', function(){
     header.classList.remove('mobile-show');
 });
 
+// on scroll event
+window.addEventListener('scroll', headerScroll)
+
 // hero
 
 // clients
@@ -22,7 +25,7 @@ close.addEventListener('click', function(){
 // about me
 
 // numbers
-renderBlocks( 'achievements', numbers );
+renderBlocks( 'achievements_list', numbers );
 
 // skills
 renderSkills( skills );
@@ -32,7 +35,7 @@ renderSkills( skills );
 // job history
 
 // services
-renderBlocks( 'services', services );
+renderBlocks( 'services_list', services );
 
 // testimonials
 

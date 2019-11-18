@@ -1,6 +1,35 @@
 "use strict";
 
 // header
+function headerScroll() {
+    // kokiame aukstyje esu
+    const height = window.scrollY;
+    
+    // kokiuose auksciuose yra sekcijos (kurios yra paminetos header nav)
+    const DOMlinks = document.querySelectorAll('#main_header nav > a');
+    console.log(DOMlinks);
+    
+    let links = [];
+    for ( let i=0; i<DOMlinks.length; i++ ) {
+        const element = DOMlinks[i];
+        const href = element.href;
+        const split = href.split('#');
+        
+        if ( split.length > 1 ) {
+            console.log(href);
+            links.push('#'+split[1]);
+        }
+
+    }
+
+    console.log(links);
+    
+
+    // kuri sekcija man artimiausia
+        // jeigu artimiausia sekcija yra pamineta header nav'e
+            // atimame "active" klase is tos kuri siuo metu ja turi
+            // jai duodame klase "active"
+}
 
 // hero
 
@@ -28,7 +57,8 @@ function renderBlocks( target, list ) {
              !item.title ) {
             continue;
         }
-        if ( target === 'services' &&
+        
+        if ( target === 'services_list' &&
              item.description ) {
             HTML += `<div class="block">
                         <i class="fa fa-${item.icon}"></i>
@@ -37,7 +67,7 @@ function renderBlocks( target, list ) {
                     </div>`;
             good++;
         }
-        if ( target === 'achievements' &&
+        if ( target === 'achievements_list' &&
              item.number ) {
             HTML += `<div class="block">
                         <i class="fa fa-${item.icon}"></i>
@@ -98,7 +128,7 @@ function renderSkills( list ) {
                 </div>`;
     }
 
-    return document.querySelector('#skills').innerHTML = HTML;
+    return document.querySelector('#skills_list').innerHTML = HTML;
 }
 
 // latest work

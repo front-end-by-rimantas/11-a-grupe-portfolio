@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png"/>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/custom.css">
 </head>
@@ -18,13 +19,13 @@
                 <i class="fa fa-times"></i>
                 <nav>
                     <a href="#" class="active">Home</a>
-                    <a href="#">About us</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Works</a>
-                    <a href="#">History</a>
-                    <a href="#">Services</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Contact</a>
+                    <a href="#about">About us</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#works">Works</a>
+                    <a href="#history">History</a>
+                    <a href="#services">Services</a>
+                    <a href="/">Blog</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </div>
         </div>
@@ -52,7 +53,7 @@
     <!-- client brands end -->
 
     <!-- about me start -->
-    <div class="container">
+    <div class="container" id="about">
         <div class="row">
             <div class="col-5">
                 <img src="./img/about-img.png" alt="Its me">
@@ -70,7 +71,7 @@
     <!-- numbers start -->
     <div class="container bg-light">
         <div class="row">
-            <div class="col-12" id="achievements">
+            <div class="col-12" id="achievements_list">
                 <!-- <div class="block col-3">
                     <i class="fa fa-facebook"></i>
                     <div class="number">135</div>
@@ -82,13 +83,13 @@
     <!-- numbers end -->
 
     <!-- skills start -->
-    <div class="container">
+    <div class="container" id="skills">
         <div class="row">
             <div class="col-5">
                 <h2 class="no-style">I got the skills</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quasi mollitia rem quisquam atque pariatur, a ut, amet illum quibusdam facere vitae delectus reiciendis fugit tempora esse sint deserunt dolorum.</p>
             </div>
-            <div class="col-7" id="skills">
+            <div class="col-7" id="skills_list">
                 <!-- <div class="progress-bar">
                     <div class="texts">
                         <div class="label">UX design</div>
@@ -106,7 +107,7 @@
     <!-- skills end -->
 
     <!-- latest work start -->
-    <div class="container bg-light">
+    <div class="container bg-light" id="works">
         <div class="row">
             <div class="col-12">
                 <h2>Latest work</h2>
@@ -125,7 +126,7 @@
     <!-- latest work end -->
 
     <!-- job history start -->
-    <div class="container">
+    <div class="container" id="history">
         <div class="row">
             <div class="col-12">
                 <h2>Job history</h2>
@@ -143,7 +144,7 @@
     <!-- job history end -->
 
     <!-- services start -->
-    <div class="container bg-light">
+    <div class="container bg-light" id="services">
         <div class="row">
             <div class="col-12">
                 <h2>Service offers</h2>
@@ -154,7 +155,7 @@
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
             </div>
         </div>
-        <div class="row" id="services">
+        <div class="row" id="services_list">
             SERVICES
         </div>
     </div>
@@ -171,7 +172,7 @@
     <!-- testimonials end -->
 
     <!-- contact me start -->
-    <div class="container bg-secondary">
+    <div class="container bg-secondary" id="contact">
         <div class="row">
             <div class="col-12">
                 <h2 class="center">Contact me</h2>
