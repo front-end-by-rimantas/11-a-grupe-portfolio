@@ -150,6 +150,32 @@ function renderSkills( list ) {
     return document.querySelector('#skills_list').innerHTML = HTML;
 }
 
+function skillsScroll() {
+    const myPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const scrollHeight = myPosition + windowHeight;
+    
+    const DOMskills = document.querySelector('#skills');
+    const skillsPosition = DOMskills.offsetTop;
+    const skillsTopPadding = parseFloat( getComputedStyle( DOMskills ).paddingTop );
+    
+    const barHeight = DOMskills.querySelector('.progress-bar').offsetHeight;
+    const barPosition = skillsPosition + skillsTopPadding + barHeight;
+    
+    if ( barPosition < scrollHeight ) {
+        const progressBars = DOMskills.querySelectorAll('.progress-bar');
+        
+        for ( let i=0; i<progressBars.length; i++ ) {
+            const bar = progressBars[i];
+            if ( !bar.classList.contains('animate') ) {
+                bar.classList.add('animate');
+            }
+        }
+    }
+    
+    return;
+}
+
 // latest work
 
 // job history
