@@ -3,11 +3,11 @@
 // header
 function headerScroll() {
     // kokiame aukstyje esu
-    const height = window.scrollY;
+    const headerHeight = document.querySelector('#main_header').offsetHeight;
+    const height = window.scrollY + headerHeight;
     
     // kokiuose auksciuose yra sekcijos (kurios yra paminetos header nav)
     const DOMlinks = document.querySelectorAll('#main_header nav > a');
-    console.log(DOMlinks);
     
     let links = [];
     for ( let i=0; i<DOMlinks.length; i++ ) {
@@ -16,19 +16,38 @@ function headerScroll() {
         const split = href.split('#');
         
         if ( split.length > 1 ) {
-            console.log(href);
             links.push('#'+split[1]);
         }
-
     }
 
-    console.log(links);
-    
+    // susirandame sekciju poziciju aukscius
+    let sectionHeights = [];
+    for ( let i=0; i<links.length; i++ ) {
+        const link = links[i];
+        if ( link === '#' ) {
+            sectionHeights.push(0);
+            continue;
+        }
+        const section = document.querySelector(link);       // '#section'
+        sectionHeights.push(section.offsetTop);
+    }
 
     // kuri sekcija man artimiausia
-        // jeigu artimiausia sekcija yra pamineta header nav'e
-            // atimame "active" klase is tos kuri siuo metu ja turi
-            // jai duodame klase "active"
+    let currentSectionImIn = 0;
+    for ( let i=0; i<sectionHeights.length; i++ ) {
+        if ( sectionHeights[i] > height ) {
+            break;
+        }
+        currentSectionImIn = i;
+    }
+    
+    // atimame "active" klase is tos kuri siuo metu ja turi
+    document.querySelector('#main_header nav > a.active')
+        .classList.remove('active');
+
+    // jai duodame klase "active"
+    document.querySelector(`#main_header nav > a[href="${links[currentSectionImIn]}"]`)
+        .classList.add('active');
 }
 
 // hero

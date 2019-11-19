@@ -16,7 +16,8 @@ close.addEventListener('click', function(){
 });
 
 // on scroll event
-window.addEventListener('scroll', headerScroll)
+window.addEventListener('scroll', headerScroll);
+headerScroll();
 
 // hero
 
