@@ -34,9 +34,12 @@
                 height: 100%;
                 background-color: #03A9F4;
     
-                animation-name: loading;
+                /* animation-name: loading; */
                 animation-duration: 2s;
                 animation-iteration-count: 1;
+            }
+            .progress-bar.animate > .full > .bar > .loading {
+                animation-name: loading;
             }
 
 @keyframes loading {

@@ -31,6 +31,9 @@ renderBlocks( 'achievements_list', numbers );
 // skills
 renderSkills( skills );
 
+window.addEventListener('scroll', skillsScroll);
+skillsScroll();
+
 // latest work
 
 // job history
