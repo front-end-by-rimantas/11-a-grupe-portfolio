@@ -1,5 +1,12 @@
 #main_header {
     padding: 10px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px #0003;
 }
     #main_header .logo {
         display: inline-block;
