@@ -6,7 +6,11 @@
     --color-primary-50: rgb(var(--p-r), var(--p-g), var(--p-b), 0.4);
     --color-primary-anti: #fff;
 
-    --color-secondary: #E45447;
+    --s-r: 228;
+    --s-g: 84;
+    --s-b: 71;
+    --color-secondary: rgb(var(--s-r), var(--s-g), var(--s-b));
+    --color-secondary-60: rgb(var(--s-r), var(--s-g), var(--s-b), 0.6);
     --color-secondary-anti: #fff;
     
     --color-light: #F9F9FF;
