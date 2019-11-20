@@ -43,6 +43,7 @@ renderGallery( works );
 renderBlocks( 'services_list', services );
 
 // testimonials
+renderTestimonials( testimonials );
 
 // contact me
 

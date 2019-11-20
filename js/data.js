@@ -113,6 +113,28 @@ const services = [
 ];
 
 // testimonials
+const testimonials = [
+    {
+        name: 'Chuck Norris',
+        starts: 7,
+        text: 'Round kick this website 🥊🥋'        // window + ;
+    },
+    {
+        name: 'Bruce Lee',
+        starts: 4.2,
+        text: 'You got to be like a water, my friend... 💦💧🌊'
+    },
+    {
+        name: 'Jackie Chan',
+        starts: 5,
+        text: 'Jackiee!!! Yes uncle? One more thing!.. (smūgis į galvą iš piršto) 🎦🎥'
+    },
+    {
+        name: 'Arnold Schwarzenegger',
+        starts: 3.8,
+        text: 'I\'ll be back'
+    }
+];
 
 // contact me
 

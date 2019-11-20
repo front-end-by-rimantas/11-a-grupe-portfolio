@@ -275,6 +275,30 @@ function updateGallery( event ) {       //event, ev, e
 // services
 
 // testimonials
+function renderTestimonials( list ) {
+    let HTML = '';
+    let listHTML = '';
+
+    // renderinam testimonialsus
+    listHTML = 'LIST';
+
+    // viska apjungiame
+    HTML += `<div class="testimonials">
+                <div class="list">
+                    ${listHTML}
+                </div>
+                <div class="controls">
+                    < ---- >
+                </div>
+            </div>`;
+
+    // ikeliame i DOM'ą
+    document.querySelector('#testimonials').innerHTML = HTML;
+
+    // prikabiname reikiamus click eventus
+
+    return;
+}
 
 // contact me
 
