@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png"/>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
     <!-- header start -->
-    <div class="container">
+    <header class="container" id="main_header">
         <div class="row">
-            HEADER
+            <div class="col-12">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-times"></i>
+                <nav>
+                    <a href="#" class="active">Home</a>
+                    <a href="#about">About us</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#works">Works</a>
+                    <a href="#history">History</a>
+                    <a href="#services">Services</a>
+                    <a href="/">Blog</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </div>
-    </div>
+    </header>
     <!-- header end -->
 
     <!-- hero start -->
     <div class="container bg-primary">
         <div class="row">
-            HERO
+            <div class="col-12">
+                HERO
+            </div>
         </div>
     </div>
     <!-- hero end -->
@@ -28,64 +45,116 @@
     <!-- client brands start -->
     <div class="container">
         <div class="row">
-            CLIENTS
+            <div class="col-12">
+                CLIENTS
+            </div>
         </div>
     </div>
     <!-- client brands end -->
 
     <!-- about me start -->
-    <div class="container">
+    <div class="container" id="about">
         <div class="row">
-            <h2>About Myself</h2>
+            <div class="col-5">
+                <img src="./img/about-img.png" alt="Its me">
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
+                <h2>About Myself</h2>
+                <p>I’m a Front End Developer. I have a Passion for Creating Clean, Beautiful, Interactive, Minimalistic, Responsive and User Friendly UI, Developed by Modular, Scalable and Functional Code. When, while the lovely valley teems with vapour around me.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
         </div>
     </div>
     <!-- about me end -->
 
     <!-- numbers start -->
     <div class="container bg-light">
-        <div class="row" id="achievements">
-            <!-- <div class="block">
-                <i class="fa fa-facebook"></i>
-                <div class="number">135</div>
-                <h4>Achievement</h4>
-            </div> -->
+        <div class="row">
+            <div class="col-12" id="achievements_list">
+                <!-- <div class="block col-3">
+                    <i class="fa fa-facebook"></i>
+                    <div class="number">135</div>
+                    <h4>Achievement</h4>
+                </div> -->
+            </div>
         </div>
     </div>
     <!-- numbers end -->
 
     <!-- skills start -->
-    <div class="container">
+    <div class="container" id="skills">
         <div class="row">
-            <h2 class="no-style">I got the skills</h2>
-            SKILLS
+            <div class="col-5">
+                <h2 class="no-style">I got the skills</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quasi mollitia rem quisquam atque pariatur, a ut, amet illum quibusdam facere vitae delectus reiciendis fugit tempora esse sint deserunt dolorum.</p>
+            </div>
+            <div class="col-7" id="skills_list">
+                <!-- <div class="progress-bar">
+                    <div class="texts">
+                        <div class="label">UX design</div>
+                        <div class="value">90%</div>
+                    </div>
+                    <div class="full">
+                        <div class="bar">
+                            <div class="loading"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
     </div>
     <!-- skills end -->
 
     <!-- latest work start -->
-    <div class="container bg-light">
+    <div class="container bg-light" id="works">
         <div class="row">
-            <h2>Latest work</h2>
-            LATEST WORKS
+            <div class="col-12">
+                <h2>Latest work</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            </div>
+        </div>
+        <div class="row" id="gallery">
+            Gallery + Gallery filter
         </div>
     </div>
     <!-- latest work end -->
 
     <!-- job history start -->
-    <div class="container">
+    <div class="container" id="history">
         <div class="row">
-            <h2>Job history</h2>
+            <div class="col-12">
+                <h2>Job history</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            </div>
+        </div>
+        <div class="row">
             JOB HISTORY
         </div>
     </div>
     <!-- job history end -->
 
     <!-- services start -->
-    <div class="container bg-light">
+    <div class="container bg-light" id="services">
         <div class="row">
-            <h2>Service offers</h2>
+            <div class="col-12">
+                <h2>Service offers</h2>
+            </div>
         </div>
-        <div class="row" id="services">
+        <div class="row">
+            <div class="col-6">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            </div>
+        </div>
+        <div class="row" id="services_list">
             SERVICES
         </div>
     </div>
@@ -94,16 +163,34 @@
     <!-- testimonials start -->
     <div class="container">
         <div class="row">
-            TESTIMONIALS
+            <div class="col-12">
+                TESTIMONIALS
+            </div>
         </div>
     </div>
     <!-- testimonials end -->
 
     <!-- contact me start -->
-    <div class="container bg-secondary">
+    <div class="container bg-secondary" id="contact">
         <div class="row">
-            <h2 class="center">Contact me</h2>
-            CONTACT ME
+            <div class="col-12">
+                <h2 class="center">Contact me</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. some for as low as $.17 each.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">+22 12345 678 9012</div>
+            <div class="col-4">information@example.com</div>
+            <div class="col-4">KarimEzZat.me</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="btn">Hire me</div>
+            </div>
         </div>
     </div>
     <!-- contact me end -->
@@ -111,7 +198,22 @@
     <!-- footer start -->
     <div class="container">
         <div class="row">
-            FOOTER
+            <div class="col-12">
+                <img src="./img/logo.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">Follow Me</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                SOCIALS
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                Copyright ©All rights reserved | KARMEN is made with  by KarimEzZat
+            </div>
         </div>
     </div>
     <!-- footer end -->
