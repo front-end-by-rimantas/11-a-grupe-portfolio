@@ -35,6 +35,7 @@ window.addEventListener('scroll', skillsScroll);
 skillsScroll();
 
 // latest work
+renderGallery( works );
 
 // job history
 

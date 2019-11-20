@@ -1,0 +1,71 @@
+.gallery {
+    display: inline-block;
+    width: 100%;
+}
+    .gallery > .filter {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+        .gallery > .filter > .item {
+            display: inline-block;
+            float: left;
+            padding: 5px 10px;
+            font-size: 18px;
+            line-height: 20px;
+            cursor: pointer;
+            text-transform: capitalize;
+        }
+        .gallery > .filter > .item:hover,
+        .gallery > .filter > .item.active {
+            color: var(--color-secondary);
+        }
+    .gallery > .list {
+        display: inline-block;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+    }
+        .gallery > .list > .work {
+            display: none;
+            width: calc((100% - 90px) / 3);
+            height: 320px;
+            float: left;
+            margin: 0 15px 30px 15px;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+        }
+            .gallery > .list > .work.show {
+                display: inline-block;
+            }
+            .gallery .work > img {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .gallery .work > .hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                background-color: var(--color-secondary-60);
+            }
+                .gallery .work:hover > .hover {
+                    display: inline-block;
+                }
+                .gallery .hover > h5 {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 36px;
+                    line-height: 40px;
+                }
+                .gallery .hover > .tags {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 18px;
+                    line-height: 20px;
+                }
