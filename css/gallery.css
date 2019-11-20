@@ -7,23 +7,36 @@
         width: 100%;
         margin-bottom: 40px;
     }
+        .gallery > .filter > .item {
+            display: inline-block;
+            float: left;
+            padding: 5px 10px;
+            font-size: 18px;
+            line-height: 20px;
+            cursor: pointer;
+            text-transform: capitalize;
+        }
+        .gallery > .filter > .item:hover,
+        .gallery > .filter > .item.active {
+            color: var(--color-secondary);
+        }
     .gallery > .list {
         display: inline-block;
-        width: 100%;
+        width: calc(100% + 30px);
+        margin-left: -15px;
     }
         .gallery > .list > .work {
-            display: inline-block;
-            width: calc((100% - 60px) / 3);
+            display: none;
+            width: calc((100% - 90px) / 3);
             height: 320px;
             float: left;
-            margin: 0 0 30px 30px;
+            margin: 0 15px 30px 15px;
             overflow: hidden;
             position: relative;
             color: #fff;
         }
-            .gallery .work:nth-child(1),
-            .gallery .work:nth-child(4) {
-                margin-left: 0;
+            .gallery > .list > .work.show {
+                display: inline-block;
             }
             .gallery .work > img {
                 display: inline-block;

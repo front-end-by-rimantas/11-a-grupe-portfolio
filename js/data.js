@@ -62,7 +62,7 @@ const works = [
     {
         name: 'Agurkas',
         photo: 'w2.jpg',
-        tags: ['maistas']
+        tags: ['Maistas']
     },
     {
         name: 'Tesla',
@@ -72,7 +72,7 @@ const works = [
     {
         name: 'Desra',
         photo: 'w4.jpg',
-        tags: ['maistas', 'old school']
+        tags: ['maistas', 'Old school']
     },
     {
         name: 'Kotletas',
