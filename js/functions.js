@@ -280,7 +280,19 @@ function renderTestimonials( list ) {
     let listHTML = '';
 
     // renderinam testimonialsus
-    listHTML = 'LIST';
+    const randomTestimonial = list[ Math.floor(Math.random() * list.length) ];
+    listHTML += `<div class="testimonial">
+                    <div class="quote">99</div>
+                    <div class="name">${randomTestimonial.name}</div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <div class="text">${randomTestimonial.text}</div>
+                </div>`;
 
     // viska apjungiame
     HTML += `<div class="testimonials">

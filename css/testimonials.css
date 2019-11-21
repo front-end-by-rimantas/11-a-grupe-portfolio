@@ -1,0 +1,50 @@
+.testimonials {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+    .testimonials > .list {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+        .testimonials > .list > .testimonial {
+            display: inline-block;
+            width: 100%;
+        }
+            .testimonial > * {
+                display: inline-block;
+                width: 100%;
+            }
+            .testimonial > .quote {
+                margin-bottom: 40px;
+                font-family: cursive;
+                font-size: 60px;
+                line-height: 60px;
+                color: #ddd;
+            }
+            .testimonial > .name {
+                margin-bottom: 10px;
+                font-size: 24px;
+                line-height: 30px;
+                font-weight: bold;
+            }
+            .testimonial > .stars {
+                width: auto;
+                margin-bottom: 40px;
+            }
+                .testimonial > .stars > i {
+                    float: left;
+                    color: var(--color-star);
+                }
+            .testimonial > .text {
+                width: 50%;
+                margin: 0 25%;
+                font-size: 18px;
+                line-height: 25px;
+                color: #777;
+            }
+    .testimonials > .controls {
+        display: inline-block;
+        width: 100%;
+    }
