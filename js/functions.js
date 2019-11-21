@@ -297,7 +297,9 @@ function renderTestimonials( list ) {
             starHTML += `<i class="fa fa-star-o"></i>`;
         }
 
-        listHTML += `<div class="testimonial ${i === defaultSelected ? 'show' : ''}">
+        listHTML += `<div class="testimonial ${i === defaultSelected ? 'show' : ''}"
+                            data-index="${i}"
+                            style="width: ${100 / list.length}%;">
                         <div class="quote">99</div>
                         <div class="name">${testimonial.name}</div>
                         <div class="stars">
@@ -309,22 +311,51 @@ function renderTestimonials( list ) {
 
     // viska apjungiame
     HTML += `<div class="testimonials">
-                <div class="list">
+                <div class="list"
+                    style="width: ${list.length}00%;
+                            margin-left: -${defaultSelected}00%;"
+                    data-visible="${defaultSelected}">
                     ${listHTML}
                 </div>
                 <div class="controls">
                     <i class="fa fa-angle-left"></i>
                     <div class="grey-bar">
-                        <div class="bar"></div>
+                        <div class="bar" style="width: ${100 / list.length}%;
+                                                margin-left: ${100 / list.length * defaultSelected}%;"></div>
                     </div>
                     <i class="fa fa-angle-right"></i>
                 </div>
             </div>`;
 
     // ikeliame i DOM'ą
-    document.querySelector('#testimonials').innerHTML = HTML;
+    const DOMtestimonials = document.querySelector('#testimonials');
+    DOMtestimonials.innerHTML = HTML;
+
+    const DOMlist = DOMtestimonials.querySelector('.list');
+    const DOMbar = DOMtestimonials.querySelector('.controls .bar');
 
     // prikabiname reikiamus click eventus
+    DOMtestimonials.querySelector('.controls .fa-angle-left')
+        .addEventListener('click', () => {
+        // rodyti pries tai buvusi
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index - 1 === -1 ) index = list.length;
+
+        DOMlist.style.marginLeft = `-${index-1}00%`;
+        DOMlist.dataset.visible = index - 1;
+        DOMbar.style.marginLeft = 100 / list.length * (index - 1) + '%';
+    })
+
+    DOMtestimonials.querySelector('.controls .fa-angle-right')
+        .addEventListener('click', () => {
+        // rodyti sekanti
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index + 1 === list.length ) index = -1;
+
+        DOMlist.style.marginLeft = `-${index+1}00%`;
+        DOMlist.dataset.visible = index + 1;
+        DOMbar.style.marginLeft = 100 / list.length * (index + 1) + '%';
+    })
 
     return;
 }

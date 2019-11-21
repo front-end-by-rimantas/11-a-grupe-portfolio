@@ -2,19 +2,18 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    overflow: hidden;
 }
     .testimonials > .list {
         display: inline-block;
-        width: 100%;
+        width: 400%;
         margin-bottom: 40px;
+        transition: all 1s;
     }
         .testimonials > .list > .testimonial {
-            display: none;
+            display: inline-block;
             width: 100%;
         }
-            .testimonials > .list > .testimonial.show {
-                display: inline-block;
-            }
             .testimonial > * {
                 display: inline-block;
                 width: 100%;
@@ -61,6 +60,7 @@
             line-height: 40px;
             color: #777;
             position: relative;
+            cursor: pointer;
         }
             .testimonials > .controls > i::after {
                 display: inline-block;
