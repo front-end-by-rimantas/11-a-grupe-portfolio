@@ -9,9 +9,12 @@
         margin-bottom: 40px;
     }
         .testimonials > .list > .testimonial {
-            display: inline-block;
+            display: none;
             width: 100%;
         }
+            .testimonials > .list > .testimonial.show {
+                display: inline-block;
+            }
             .testimonial > * {
                 display: inline-block;
                 width: 100%;
@@ -46,5 +49,53 @@
             }
     .testimonials > .controls {
         display: inline-block;
-        width: 100%;
+        width: auto;
     }
+        .testimonials > .controls > * {
+            display: inline-block;
+            float: left;
+        }
+        .testimonials > .controls > i {
+            width: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            color: #777;
+            position: relative;
+        }
+            .testimonials > .controls > i::after {
+                display: inline-block;
+                content: '';
+                width: 14px;
+                height: 1px;
+                background-color: #777;
+                position: absolute;
+                top: 50%;
+            }
+        .testimonials > .controls > i.fa-angle-left {
+            text-align: left;
+            padding-left: 12px;
+        }
+            .testimonials > .controls > i.fa-angle-left::after {
+                left: 13px;
+            }
+        .testimonials > .controls > i.fa-angle-right {
+            text-align: right;
+            padding-right: 12px;
+        }
+            .testimonials > .controls > i.fa-angle-right::after {
+                right: 13px;
+            }
+        .testimonials > .controls > .grey-bar {
+            width: 160px;
+            height: 4px;
+            margin-top: 18px;
+            background-color: #ddd;
+        }
+            .testimonials .grey-bar > .bar {
+                display: inline-block;
+                width: 25%;
+                height: 100%;
+                float: left;
+                margin-left: 50%;
+                background-color: var(--color-secondary);
+            }

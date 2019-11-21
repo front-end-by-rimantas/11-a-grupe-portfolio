@@ -280,19 +280,32 @@ function renderTestimonials( list ) {
     let listHTML = '';
 
     // renderinam testimonialsus
-    const randomTestimonial = list[ Math.floor(Math.random() * list.length) ];
-    listHTML += `<div class="testimonial">
-                    <div class="quote">99</div>
-                    <div class="name">${randomTestimonial.name}</div>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="text">${randomTestimonial.text}</div>
-                </div>`;
+    const defaultSelected = Math.floor( list.length / 2 );
+    
+    for ( let i=0; i<list.length; i++ ) {
+        const testimonial = list[i];
+        let starHTML = '';
+        
+        let star = Math.round(testimonial.stars);
+        if ( star < 0 ) star = 0;
+        if ( star > 5 ) star = 5;
+
+        for ( let sf=0; sf<star; sf++ ) {
+            starHTML += `<i class="fa fa-star"></i>`;
+        }
+        for ( let sf=star; sf<5; sf++ ) {
+            starHTML += `<i class="fa fa-star-o"></i>`;
+        }
+
+        listHTML += `<div class="testimonial ${i === defaultSelected ? 'show' : ''}">
+                        <div class="quote">99</div>
+                        <div class="name">${testimonial.name}</div>
+                        <div class="stars">
+                            ${starHTML}
+                        </div>
+                        <div class="text">${testimonial.text}</div>
+                    </div>`;
+    }
 
     // viska apjungiame
     HTML += `<div class="testimonials">
@@ -300,7 +313,11 @@ function renderTestimonials( list ) {
                     ${listHTML}
                 </div>
                 <div class="controls">
-                    < ---- >
+                    <i class="fa fa-angle-left"></i>
+                    <div class="grey-bar">
+                        <div class="bar"></div>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
                 </div>
             </div>`;
 
