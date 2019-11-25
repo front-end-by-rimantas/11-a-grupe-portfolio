@@ -1,6 +1,9 @@
 "use strict";
 
 // header
+/**
+ * Detektina kokiame aukstyje esame priscroline ir pagal situacija keicia header elemento stiliu
+ */
 function headerScroll() {
     // kokiame aukstyje esu
     const headerHeight = document.querySelector('#main_header').offsetHeight;
@@ -57,6 +60,12 @@ function headerScroll() {
 // about me
 
 // numbers
+/**
+ * Skirta generuoti blokinioms sekcijoms (numbers ir services)
+ * @param {string} target Vieta kur sugeneruoti norima turini
+ * @param {Array.<Object>} list Sarasas duomenu is kuriu generuoti turini
+ * @returns {string} I nurodyta vieta iterpia sugeneruota HTML turini
+ */
 function renderBlocks( target, list ) {
     let HTML = '';
     let good = 0;
@@ -177,6 +186,10 @@ function skillsScroll() {
 }
 
 // latest work
+/**
+ * 
+ * @param {Array.<Object>} list 
+ */
 function renderGallery( list ) {
     const DOM = document.querySelector('#gallery');
     let HTML = '';
@@ -275,6 +288,233 @@ function updateGallery( event ) {       //event, ev, e
 // services
 
 // testimonials
+function renderTestimonials( list ) {
+    let HTML = '';
+    let listHTML = '';
+
+    // renderinam testimonialsus
+    const defaultSelected = Math.floor( list.length / 2 );
+    
+    for ( let i=0; i<list.length; i++ ) {
+        const testimonial = list[i];
+        let starHTML = '';
+        
+        let star = Math.round(testimonial.stars);
+        if ( star < 0 ) star = 0;
+        if ( star > 5 ) star = 5;
+
+        for ( let sf=0; sf<star; sf++ ) {
+            starHTML += `<i class="fa fa-star"></i>`;
+        }
+        for ( let sf=star; sf<5; sf++ ) {
+            starHTML += `<i class="fa fa-star-o"></i>`;
+        }
+
+        listHTML += `<div class="testimonial ${i === defaultSelected ? 'show' : ''}"
+                            data-index="${i}"
+                            style="width: ${100 / list.length}%;">
+                        <div class="quote">99</div>
+                        <div class="name">${testimonial.name}</div>
+                        <div class="stars">
+                            ${starHTML}
+                        </div>
+                        <div class="text">${testimonial.text}</div>
+                    </div>`;
+    }
+
+    // viska apjungiame
+    HTML += `<div class="testimonials">
+                <div class="list"
+                    style="width: ${list.length}00%;
+                            margin-left: -${defaultSelected}00%;"
+                    data-visible="${defaultSelected}">
+                    ${listHTML}
+                </div>
+                <div class="controls">
+                    <i class="fa fa-angle-left"></i>
+                    <div class="grey-bar">
+                        <div class="bar" style="width: ${100 / list.length}%;
+                                                margin-left: ${100 / list.length * defaultSelected}%;"></div>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>`;
+
+    // ikeliame i DOM'ą
+    const DOMtestimonials = document.querySelector('#testimonials');
+    DOMtestimonials.innerHTML = HTML;
+
+    const DOMlist = DOMtestimonials.querySelector('.list');
+    const DOMbar = DOMtestimonials.querySelector('.controls .bar');
+
+    // prikabiname reikiamus click eventus
+    DOMtestimonials.querySelector('.controls .fa-angle-left')
+        .addEventListener('click', () => {
+        // rodyti pries tai buvusi
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index - 1 === -1 ) index = list.length;
+
+        DOMlist.style.marginLeft = `-${index-1}00%`;
+        DOMlist.dataset.visible = index - 1;
+        DOMbar.style.marginLeft = 100 / list.length * (index - 1) + '%';
+    })
+
+    DOMtestimonials.querySelector('.controls .fa-angle-right')
+        .addEventListener('click', () => {
+        // rodyti sekanti
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index + 1 === list.length ) index = -1;
+
+        DOMlist.style.marginLeft = `-${index+1}00%`;
+        DOMlist.dataset.visible = index + 1;
+        DOMbar.style.marginLeft = 100 / list.length * (index + 1) + '%';
+    })
+
+    return;
+}
+
+// testimonials
+function renderTestimonialsCarousel( list ) {
+    let HTML = '';
+    let listHTML = '';
+
+    // originalas: [1, 2, 3]
+    // pridedame galini ir priekini klona -> [3, 1, 2, 3, 1]
+    list = [list[list.length-1], ...list, list[0]];
+    
+
+    // renderinam testimonialsus
+    const defaultSelected = Math.floor( list.length / 2 );
+    
+    for ( let i=0; i<list.length; i++ ) {
+        const testimonial = list[i];
+        let starHTML = '';
+        
+        let star = Math.round(testimonial.stars);
+        if ( star < 0 ) star = 0;
+        if ( star > 5 ) star = 5;
+
+        for ( let sf=0; sf<star; sf++ ) {
+            starHTML += `<i class="fa fa-star"></i>`;
+        }
+        for ( let sf=star; sf<5; sf++ ) {
+            starHTML += `<i class="fa fa-star-o"></i>`;
+        }
+
+        listHTML += `<div class="testimonial ${i === defaultSelected ? 'show' : ''}"
+                            data-index="${i}"
+                            style="width: ${100 / list.length}%;">
+                        <div class="quote">99</div>
+                        <div class="name">${testimonial.name}</div>
+                        <div class="stars">
+                            ${starHTML}
+                        </div>
+                        <div class="text">${testimonial.text}</div>
+                    </div>`;
+    }
+
+    // viska apjungiame
+    HTML += `<div class="testimonials">
+                <div class="list"
+                    style="width: ${list.length}00%;
+                            margin-left: -${defaultSelected}00%;"
+                    data-visible="${defaultSelected}">
+                    ${listHTML}
+                </div>
+                <div class="controls">
+                    <i class="fa fa-angle-left"></i>
+                    <div class="grey-bar">
+                        <div class="bar" style="width: ${100 / (list.length - 2)}%;
+                                                margin-left: ${100 / list.length * defaultSelected}%;"></div>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>`;
+
+    // ikeliame i DOM'ą
+    const DOMtestimonials = document.querySelector('#testimonials_carousel');
+    DOMtestimonials.innerHTML = HTML;
+
+    const DOMlist = DOMtestimonials.querySelector('.list');
+    const DOMbar = DOMtestimonials.querySelector('.controls .bar');
+
+    let animationLock = false;
+
+    // prikabiname reikiamus click eventus
+    DOMtestimonials.querySelector('.controls .fa-angle-left')
+        .addEventListener('click', () => {
+        // neleidziame paleisti animacijos, jei ji jau prasidejusi
+        if ( animationLock ) {
+            return;
+        }
+
+        // rodyti sekanti
+        animationLock = true;
+
+        // rodyti pries tai buvusi
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index - 1 === -1 ) index = list.length;
+
+        DOMlist.style.marginLeft = `-${index-1}00%`;
+        DOMlist.dataset.visible = index - 1;
+        if ( index === 1 ) index = list.length - 1;
+        DOMbar.style.marginLeft = 100 / (list.length - 2) * (index - 2) + '%';
+        // pasiekeme prieki - teleportuojames i gala
+        if ( index === list.length - 1 ) {
+            setTimeout(() => {
+                DOMlist.classList.add('no-animation');
+                DOMlist.dataset.visible = list.length - 2;
+                DOMlist.style.marginLeft = `-${list.length - 2}00%`;
+            }, 1000)
+            setTimeout(() => {
+                DOMlist.classList.remove('no-animation');
+            }, 1200)
+        }
+        
+        // atlokiname
+        setTimeout(() => {
+            animationLock = false;
+        }, 1200)
+    })
+
+    DOMtestimonials.querySelector('.controls .fa-angle-right')
+        .addEventListener('click', () => {
+        // neleidziame paleisti animacijos, jei ji jau prasidejusi
+        if ( animationLock ) {
+            return;
+        }
+
+        // rodyti sekanti
+        animationLock = true;
+
+        let index = parseInt(DOMlist.dataset.visible);
+        if ( index === list.length ) index = -1;
+
+        DOMlist.style.marginLeft = `-${index+1}00%`;
+        DOMlist.dataset.visible = index + 1;
+        if ( index === list.length - 2 ) index = 0;
+        DOMbar.style.marginLeft = 100 / (list.length - 2) * index + '%';
+        // pasiekeme gala - teleportuojames i prieki
+        if ( index === 0 ) {
+            setTimeout(() => {
+                DOMlist.classList.add('no-animation');
+                DOMlist.dataset.visible = 1;
+                DOMlist.style.marginLeft = '-100%';
+            }, 1000)
+            setTimeout(() => {
+                DOMlist.classList.remove('no-animation');
+            }, 1200)
+        }
+        
+        // atlokiname
+        setTimeout(() => {
+            animationLock = false;
+        }, 1200)
+
+    })
+
+    return;
+}
 
 // contact me
 
