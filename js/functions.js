@@ -251,10 +251,13 @@ function renderGallery( list ) {
 }
 
 function updateGallery( event ) {       //event, ev, e
-    const clickedTag = event.target.dataset.tag;
+    const clickedElement = event.target;
+    const clickedTag = clickedElement.dataset.tag;
+    document.querySelector('.gallery > .filter > .item.active').classList.remove('active');
+    clickedElement.classList.add('active');
     const DOMworks = document.querySelectorAll('.gallery > .list > .work');
 
-    if ( clickedTag === 'All categories' ) {
+    if ( clickedTag === 'all' ) {
         for ( let i=0; i<DOMworks.length; i++ ) {
             DOMworks[i].classList.add('show');
         }
