@@ -10,6 +10,9 @@
         margin-bottom: 40px;
         transition: all 1s;
     }
+        .testimonials > .list.no-animation {
+            transition: all 0s;
+        }
         .testimonials > .list > .testimonial {
             display: inline-block;
             width: 100%;
