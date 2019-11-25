@@ -1,0 +1,104 @@
+.testimonials {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+    .testimonials > .list {
+        display: inline-block;
+        width: 400%;
+        margin-bottom: 40px;
+        transition: all 1s;
+    }
+        .testimonials > .list.no-animation {
+            transition: all 0s;
+        }
+        .testimonials > .list > .testimonial {
+            display: inline-block;
+            width: 100%;
+        }
+            .testimonial > * {
+                display: inline-block;
+                width: 100%;
+            }
+            .testimonial > .quote {
+                margin-bottom: 40px;
+                font-family: cursive;
+                font-size: 60px;
+                line-height: 60px;
+                color: #ddd;
+            }
+            .testimonial > .name {
+                margin-bottom: 10px;
+                font-size: 24px;
+                line-height: 30px;
+                font-weight: bold;
+            }
+            .testimonial > .stars {
+                width: auto;
+                margin-bottom: 40px;
+            }
+                .testimonial > .stars > i {
+                    float: left;
+                    color: var(--color-star);
+                }
+            .testimonial > .text {
+                width: 50%;
+                margin: 0 25%;
+                font-size: 18px;
+                line-height: 25px;
+                color: #777;
+            }
+    .testimonials > .controls {
+        display: inline-block;
+        width: auto;
+    }
+        .testimonials > .controls > * {
+            display: inline-block;
+            float: left;
+        }
+        .testimonials > .controls > i {
+            width: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            color: #777;
+            position: relative;
+            cursor: pointer;
+        }
+            .testimonials > .controls > i::after {
+                display: inline-block;
+                content: '';
+                width: 14px;
+                height: 1px;
+                background-color: #777;
+                position: absolute;
+                top: 50%;
+            }
+        .testimonials > .controls > i.fa-angle-left {
+            text-align: left;
+            padding-left: 12px;
+        }
+            .testimonials > .controls > i.fa-angle-left::after {
+                left: 13px;
+            }
+        .testimonials > .controls > i.fa-angle-right {
+            text-align: right;
+            padding-right: 12px;
+        }
+            .testimonials > .controls > i.fa-angle-right::after {
+                right: 13px;
+            }
+        .testimonials > .controls > .grey-bar {
+            width: 160px;
+            height: 4px;
+            margin-top: 18px;
+            background-color: #ddd;
+        }
+            .testimonials .grey-bar > .bar {
+                display: inline-block;
+                width: 25%;
+                height: 100%;
+                float: left;
+                margin-left: 50%;
+                background-color: var(--color-secondary);
+            }
