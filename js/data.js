@@ -31,6 +31,28 @@ const numbers = [
         title: 'Happy clients'
     }
 ];
+const numbers_2 = [
+    {
+        icon: 'archive',
+        number: 2450,
+        title: 'Total projects'
+    },
+    {
+        icon: 'trophy',
+        number: 5350,
+        title: 'Trophy won'
+    },
+    {
+        icon: 'users',
+        number: 2880,
+        title: 'Experiences staff'
+    },
+    {
+        icon: 'smile-o',
+        number: 7500,
+        title: 'Happy clients'
+    }
+];
 
 // skills
 const skills = [

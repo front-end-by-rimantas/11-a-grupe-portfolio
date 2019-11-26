@@ -95,11 +95,14 @@ function renderBlocks( target, list ) {
                     </div>`;
             good++;
         }
-        if ( target === 'achievements_list' &&
+        if ( (target === 'achievements_list' || target === 'achievements_list_2') &&
              item.number ) {
             HTML += `<div class="block">
                         <i class="fa fa-${item.icon}"></i>
-                        <div class="number">${item.number}</div>
+                        <div class="number"
+                            data-number_from="0"
+                            data-number_to="${item.number}"
+                            data-time="3">${item.number}</div>
                         <h4>${item.title}</h4>
                     </div>`;
             good++;
@@ -115,6 +118,86 @@ function renderBlocks( target, list ) {
     
     return document.getElementById(target).innerHTML = HTML;
 }
+
+/**
+ * Priskrolinus prie nurodytos sekcijos inicijuoja skaiciu animavima (nuo pradines iki galines reiksmes keitimas per nurodyta laiko intervala).
+ * @param {string} target Kelias iki tevines vietos, kurioje vyks elementu turinio animavimas
+ */
+function sectionNumberCounter( target ) {
+    // tevine sekcija nuo kurios prasideda galima animacija
+    const targetSection = document.querySelector(target);
+    const targetSectionPositionY = targetSection.offsetTop;
+    
+    // patikriname, ar galime animuoti (nes arba truksta info, arba jau suanimuota)
+    const sectionAnimationStatus = targetSection.getAttribute('data-animated_counter');
+    if ( sectionAnimationStatus && sectionAnimationStatus === 'true' ) {
+        return;
+    }
+
+    // jei priscrollinu iki nurodytos sekcijos, tai pazymiu, jog animacija jau pradeta
+    if ( window.scrollY > targetSectionPositionY ) {
+        targetSection.dataset.animated_counter = 'true';
+    }
+
+    // jei nera nurodyta ka teviniame elemente reikia animuoti, tai nebegalime nieko daryti ir baigiam
+    const elementsToAnimate = targetSection.dataset.animated_element;
+    if ( !elementsToAnimate ||
+         elementsToAnimate === '' ) {
+        return;
+    }
+
+    // susirenkame elementus, kuriuos reikia animuoti
+    const animations = targetSection.querySelectorAll(elementsToAnimate);
+
+    for ( let i=0; i<animations.length; i++ ) {
+        // animuojamas elementas
+        const anime = animations[i];
+
+        // pradiniai parametrai konreciai animacijai
+        let countFrom = anime.dataset.number_from ? parseInt(anime.dataset.number_from) : 0;
+        let countTo = anime.dataset.number_to ? parseInt(anime.dataset.number_to) : 100;
+        let time = anime.dataset.time ? parseInt(anime.dataset.time) : 10;
+        const steps = 100;
+
+        const allowedTimeUnits = ['s', 'ms'];
+        let timeUnit = 's';
+        if ( anime.dataset.time_unit &&
+             allowedTimeUnits.indexOf(anime.dataset.time_unit) !== -1 ) {
+            timeUnit = anime.dataset.time_unit;
+        }
+
+        // nuresetiname iki pradines reiksmes
+        anime.textContent = countFrom;
+
+        // animacija
+        let animationFrame = 0;
+        const timer = setInterval(() => {
+            anime.textContent = Math.round((countTo - countFrom) / steps * animationFrame);
+            animationFrame++;
+            if ( animationFrame === steps + 1 ) {
+                clearInterval(timer);
+            }
+        }, time * 1000 / (steps + 1 ));
+    }
+}
+
+
+{/* <section class="counter_area"
+        data-animated_counter="false"
+        data-animated_element=".element">
+            
+    <div class="element"
+        data-number_from="0"
+        data-number_to="750"
+        data-time="60"
+        data-time_unit="s">750</div>
+    <div class="element"
+        data-number_from="0"
+        data-number_to="750"
+        data-time="3"
+        data-time_unit="s">750</div>
+
+</section> */}
 
 // skills
 function renderSkills( list ) {
