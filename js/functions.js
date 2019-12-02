@@ -66,7 +66,7 @@ function headerScroll() {
  * @param {Array.<Object>} list Sarasas duomenu is kuriu generuoti turini
  * @returns {string} I nurodyta vieta iterpia sugeneruota HTML turini
  */
-function renderBlocks( target, list ) {
+function renderBlocks( list, target ) {
     let HTML = '';
     let good = 0;
 
@@ -606,3 +606,25 @@ function renderTestimonialsCarousel( list ) {
 
 // footer
 
+// HTTP requests
+
+function loadJSON( fileName, callback, callbackParam ) {
+    const path = 'https://front-end-by-rimantas.github.io/11-a-grupe-portfolio/js/data/';
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            const obj = JSON.parse(xhttp.responseText);
+            if ( callbackParam ) {
+                callback( obj, callbackParam );
+            } else {
+                callback( obj );
+            }
+        }
+    };
+    xhttp.open("GET", path+fileName, true);
+    xhttp.send();
+}
+
+loadJSON( 'numbers.json', renderBlocks, 'achievements_list' );
+loadJSON( 'skills.json', renderSkills );
