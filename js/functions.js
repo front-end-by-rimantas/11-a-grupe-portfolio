@@ -123,7 +123,7 @@ function renderBlocks( target, list ) {
  * Priskrolinus prie nurodytos sekcijos inicijuoja skaiciu animavima (nuo pradines iki galines reiksmes keitimas per nurodyta laiko intervala).
  * @param {string} target Kelias iki tevines vietos, kurioje vyks elementu turinio animavimas
  */
-function sectionNumberCounter( target ) {
+function sectionNumberCounter( target ) {    
     // tevine sekcija nuo kurios prasideda galima animacija
     const targetSection = document.querySelector(target);
     const targetSectionPositionY = targetSection.offsetTop;
@@ -135,8 +135,10 @@ function sectionNumberCounter( target ) {
     }
 
     // jei priscrollinu iki nurodytos sekcijos, tai pazymiu, jog animacija jau pradeta
-    if ( window.scrollY > targetSectionPositionY ) {
+    if ( window.scrollY + window.innerHeight > targetSectionPositionY ) {
         targetSection.dataset.animated_counter = 'true';
+    } else {
+        return;
     }
 
     // jei nera nurodyta ka teviniame elemente reikia animuoti, tai nebegalime nieko daryti ir baigiam

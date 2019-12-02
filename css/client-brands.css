@@ -1,0 +1,28 @@
+#clients {
+    padding-bottom: 0;
+    user-select: none;
+    pointer-events: none;
+}
+    #clients > .row > .col-12 {
+        padding: 50px 15px;
+        margin-top: -140px;
+        margin-bottom: -180px;
+        background-color: #fff;
+        line-height: 20px;
+        border-radius: 65px;
+        box-shadow: 0 4px 40px #0003;
+        overflow: hidden;
+    }
+        #clients .clients-list {
+            display: inline-block;
+            transition: all 0.5s;
+        }
+    #clients .clients-list > .client-img {
+        display: inline-block;
+        float: left;
+        width: 20%;
+        height: 30px;
+        padding: 0 20px;
+        object-fit: contain;
+        object-position: center;
+    }

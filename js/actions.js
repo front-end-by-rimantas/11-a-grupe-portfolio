@@ -27,11 +27,11 @@ headerScroll();
 
 // numbers
 renderBlocks( 'achievements_list', numbers );
-renderBlocks( 'achievements_list_2', numbers_2 );
+// renderBlocks( 'achievements_list_2', numbers_2 );
 
 window.addEventListener('scroll', ()=>{
     sectionNumberCounter('#achievements_list');
-    sectionNumberCounter('#achievements_list_2');
+    // sectionNumberCounter('#achievements_list_2');
     // sectionNumberCounter('#success.example-1');
     // sectionNumberCounter('#failure.example-2');
 });

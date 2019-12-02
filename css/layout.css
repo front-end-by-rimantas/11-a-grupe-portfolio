@@ -14,6 +14,10 @@
     --col-12: calc(var(--col-1) * 12 + 11 * 2 * var(--gap));
 }
 
+.min-container-height {
+    min-height: 100vh;
+}
+
 .container {
     display: inline-block;
     width: 100%;
